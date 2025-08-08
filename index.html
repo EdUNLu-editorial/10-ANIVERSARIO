@@ -244,8 +244,11 @@
             padding: 20px 30px;
             background-color: white;
             position: relative;
-            border-radius: 6px;
+            border-radius: 0px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .timeline-content:hover {
+            box-shadow: 0 1px 9px rgba(70, 201, 120, 0.986);
         }
 
         /* Media queries para la responsividad de la línea de tiempo */
@@ -349,7 +352,7 @@
         .carousel-item-collection {
             flex: 0 0 auto; /* Evita que los elementos se encojan o crezcan */
             width: 250px; /* Cada elemento ocupa el ancho del contenedor */
-            height: 100%; /* Asegura que el elemento ocupe toda la altura */
+            height: 100%;
             display: inline-block; /* Para compatibilidad con navegadores antiguos con white-space: nowrap */
         }
 
@@ -480,10 +483,10 @@
 
 
         /* --- COLORES DE FONDO PARA CADA SECCIÓN (NUEVOS ESTILOS) --- */
-        #inicio { background-color: #0da353; }
-        #nosotros { background-color: #006bcd; /* Azul para Aulas Universitarias */ }
-        #servicios { background-color: #FF0000; /* Rojo para Ciencias */ }
-        #galeria { background-color: #ffc300; /* Amarillo para Sociedad en Movimiento */ }
+        #inicio { background-image: linear-gradient(rgb(67, 172, 32), rgb(118, 223, 83)); }
+        #nosotros { background: linear-gradient(90deg, rgba(0, 107, 205, 1) 0%, rgba(0, 107, 205, 1) 50%, rgba(92, 176, 255, 1) 100%); /* Azul para Aulas Universitarias */ }
+        #servicios { background: linear-gradient(90deg,rgba(255, 0, 0, 1) 0%, rgba(255, 0, 0, 1) 50%, rgba(255, 85, 0, 1) 100%); /* Rojo para Ciencias */ }
+        #galeria { background: linear-gradient(90deg,rgba(255, 199, 15, 1) 0%, rgba(245, 188, 0, 1) 50%, rgba(179, 149, 0, 1) 100%); /* Amarillo para Sociedad en Movimiento */ }
         #our-history-images {
             background-color: #FFFFFF; /* Cambiado a blanco para esta sección */
             color: #2F4F4F; /* Ajusta el color del texto para que contraste con el blanco */
@@ -501,7 +504,6 @@
         #mission-statement {
             background-color: #0da353; /* Color de fondo actualizado a #0da353 */
             color: #fff; /* Texto blanco */
-            text-align: center;
             padding: 80px 2rem; /* Añade algo de padding */
             box-sizing: border-box;
             display: flex;
@@ -649,7 +651,115 @@
                 display: none; /* Oculta la navegación de escritorio en pantallas pequeñas */
             }
         }
-               /* Ajustes responsivos para la sección de la carta del director */
+
+        /* Estilos para la nueva sección de la Carta del Director */
+        #director-letter-section {
+            background-color: #0da353; /* Color de fondo verde */
+            color: #fff; /* Texto blanco */
+            padding: 80px 2rem; /* Padding para el contenido */
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            /* overflow: hidden; /* Para que la transición de max-height funcione correctamente */
+        }
+
+        .director-photo-container {
+            width: 150px; /* Tamaño del contenedor de la foto */
+            height: 150px;
+            border-radius: 50%; /* Hace el contenedor circular */
+            overflow: hidden; /* Recorta la imagen para que sea circular */
+            border: 5px solid #fff; /* Borde blanco alrededor de la foto */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra para profundidad */
+            display: flex; /* Para centrar la imagen dentro del contenedor */
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1rem; /* Espacio debajo de la foto */
+        }
+
+        .director-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Asegura que la imagen cubra el círculo */
+            display: block; /* Elimina espacio extra debajo de la imagen */
+        }
+
+        /* Contenedor para el título y el contenido desplegable */
+        .director-letter-container {
+            max-width: 800px; /* Ancho máximo para el área del título y el contenido */
+            width: 100%; /* Asegura que ocupe todo el ancho dentro de su padre */
+            margin: 0 auto; /* Centra el contenedor */
+        }
+
+        /* Estilos para el área del título que activa el despliegue */
+        .director-letter-title-trigger {
+            cursor: pointer; /* Indica que es interactivo */
+            padding: 1rem 2rem; /* Padding para el área clicable del título */
+            border-radius: 0px;
+            transition: background-color 0.3s ease;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* Mantiene la sombra de texto para el título */
+            color: #fff; /* Mantiene el texto del título en blanco */
+            font-size: 3rem; /* Mantiene el tamaño de fuente del título */
+            font-weight: 700; /* Mantiene el peso de fuente del título */
+            line-height: 1.2; /* Mantiene el interlineado del título */
+            margin-bottom: 0; /* Elimina el margen inferior del h2 para evitar empuje */
+            display: flex; /* Para alinear la flecha */
+            justify-content: center; /* Para centrar el título y la flecha */
+            align-items: center;
+            gap: 10px; /* Espacio entre el título y la flecha */
+        }
+
+        .director-letter-title-trigger:hover {
+            background-color: rgba(0, 0, 0, 0.17); /* Ligero cambio de fondo al pasar el ratón */
+        }
+
+        /* Estilos de la flecha */
+        .arrow-icon {
+            display: inline-block;
+            transition: transform 0.3s ease;
+            font-size: 0.4em; /* Más pequeño que el título */
+            opacity: 100%;
+            margin-top: 8px;
+        }
+
+        .arrow-icon.rotated {
+            transform: rotate(180deg); /* Gira 180 grados cuando está abierto */
+        }
+
+        /* Estilos para el contenido de la carta que se despliega */
+        .collapsible-letter-content {
+            max-height: 0; /* Altura inicial cero para ocultar */
+            opacity: 0; /* Opacidad inicial cero para ocultar */
+            overflow: hidden; /* Oculta el contenido que se desborda */
+            transition: max-height 0.7s ease-out, opacity 0.7s ease-out, padding 0.7s ease-out; /* Transiciones suaves */
+            padding: 0 30px; /* Padding inicial, se expandirá con max-height */
+            box-sizing: border-box; /* Asegura que el padding se incluya en la altura */
+            background-image: linear-gradient(315deg, #d5ddf8, #fff 57%); /* Fondo blanco semi-transparente */
+            color: #333; /* Texto oscuro para mayor legibilidad sobre fondo blanco */
+            border-radius: 0px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Sombra más fuerte para efecto flotante */
+            margin-top: 1rem; /* Espacio desde el título */
+            text-align: left; /* Alinea el texto dentro del cuadro */
+        }
+
+        /* Estado desplegado del contenido de la carta (activado por clase JS) */
+        .collapsible-letter-content.is-open {
+            max-height: 1400px; /* Un valor lo suficientemente grande para contener todo el contenido */
+            opacity: 1; /* Hace el contenido visible */
+            padding: 20px 30px; /* Restaura el padding completo al abrir */
+        }
+
+        .collapsible-letter-content p {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            text-shadow: none; /* Elimina la sombra de texto para mayor legibilidad en fondo claro */
+            margin-bottom: 1rem;
+            color: #333; /* Asegura que el color del texto sea oscuro dentro del cuadro */
+        }
+
+        /* Ajustes responsivos para la sección de la carta del director */
         @media (max-width: 768px) {
             #director-letter-section {
                 padding: 60px 1rem;
@@ -665,10 +775,17 @@
             .collapsible-letter-content {
                 padding: 0 20px; /* Ajusta el padding inicial para móvil */
             }
-            .director-letter-title-trigger:hover + .collapsible-letter-content {
+            .collapsible-letter-content.is-open { /* Usa is-open para el padding responsivo */
                 padding: 15px 20px; /* Ajusta el padding para móvil al abrir */
             }
         }
+            .hr {
+            border: none; /* Elimina el borde predeterminado */
+            height: 1px; /* Grosor de la línea */
+            background-color: rgb(236, 236, 236); /* Color de la línea */
+            margin-top: 10px;
+            margin-bottom: 10px;
+            }
     </style>
 </head>
 <body class="bg-gray-50 font-sans text-gray-800">
@@ -685,10 +802,11 @@
         <!-- Navegación de Escritorio -->
         <nav id="desktop-nav">
             <ul class="flex space-x-4">
-                <li><a href="#video-section" class="text-gray-600 hover:text-blue-600 transition duration-300">10 AÑOS</a></li>
-                <li><a href="#inicio" class="text-gray-600 hover:text-blue-600 transition duration-300">Colecciones</a></li>
-                <li><a href="#timeline-section" class="text-gray-600 hover:text-blue-600 transition duration-300">Historia</a></li>
-                <li><a href="#cta-section" class="text-gray-600 hover:text-blue-600 transition duration-300">Catálogo</a></li>
+                <li><a href="#video-section" class="text-gray-600 hover:text-green-600 transition duration-300">10 AÑOS</a></li>
+                <li><a href="#director-letter-section" class="text-gray-600 hover:text-green-600 transition duration-300">Carta</a></li>
+                <li><a href="#inicio" class="text-gray-600 hover:text-green-600 transition duration-300">Colecciones</a></li>
+                <li><a href="#timeline-section" class="text-gray-600 hover:text-green-600 transition duration-300">Historia</a></li>
+                <li><a href="#cta-section" class="text-gray-600 hover:text-green-600 transition duration-300">Catálogo</a></li>
             </ul>
         </nav>
         <!-- Botón de Menú de Hamburguesa -->
@@ -770,7 +888,66 @@
             </div>
         </section>
 
-        
+        <!-- Nueva Sección: Carta del Director -->
+        <section id="director-letter-section" class="flex-col text-center py-16">
+        <!--    <div class="director-photo-container mb-8">
+                <img src="https://placehold.co/150x150/0da353/FFFFFF?text=Director" alt="Foto del Director Pablo Lulic" class="director-photo">
+            </div>
+            <h3 class="text-2xl font-semibold text-white mb-6">Pablo Lulic</h3>-->
+
+            <div class="director-letter-container">
+                <div class="director-letter-title-trigger" id="directorLetterTrigger">
+                    <h2 class="text-4xl font-semibold text-white mt-0 mb-0">Celebrar el pasado, proyectar el futuro</h2>
+                    <span class="arrow-icon">&#9660;</span> <!-- Flecha hacia abajo -->
+                </div>
+                
+                <div class="collapsible-letter-content" id="collapsibleLetterContent">
+                    <!-- Contenido de la carta -->
+                    <hr class="hr">
+                    <p class="text-lg text-gray-800 leading-relaxed mb-4">
+                        Parece que fue ayer cuando dábamos esos primeros pasos, cargados de ilusión y con la firme
+                        convicción de que la universidad debía ser también un espacio de creación y difusión del
+                        conocimiento a través del libro.
+                    </p>
+
+                    <p class="text-lg text-gray-800 leading-relaxed mb-4">
+                        En esta década, nuestra editorial se ha convertido en un pilar fundamental. No solo es un puente
+                        entre la investigación y la sociedad, sino también una ventana que permite a nuestros docentes,
+                        investigadores y extensionistas, compartir sus saberes y reflexiones más allá de las aulas. Cada
+                        libro publicado es un testimonio del rigor académico, la creatividad y el compromiso de nuestra
+                        comunidad universitaria con la generación de conocimiento relevante y pertinente.
+                    </p>
+
+                    <p class="text-lg text-gray-800 leading-relaxed mb-4">
+                        Hoy celebramos una década de logros, pero también miramos hacia el futuro con renovado
+                        entusiasmo. Los desafíos son muchos en el mundo editorial actual, pero seguiremos
+                        adaptándonos, explorando nuevos formatos y temáticas, y manteniendo nuestro compromiso con
+                        la excelencia académica y la difusión del conocimiento.
+                    </p>
+
+                    <p class="text-lg text-gray-800 leading-relaxed mb-4">
+                        En una editorial universitaria los logros no se miden en función de ganancias o pérdidas
+                        económicas, sino con el hecho de ser un servicio de apoyo a la comunidad universitaria y a la
+                        sociedad a la cual pertenece.
+                    </p>
+
+                    <p class="text-lg text-gray-800 leading-relaxed mb-4">
+                        EdUNLu como editorial universitaria conecta a la Universidad con su comunidad, sirviendo como
+                        medio de comunicación e integración.
+                    </p>
+
+                    <p class="text-lg text-gray-800 leading-relaxed mb-4">
+                        Que estos diez años sean solo el prólogo de una larga y fructífera historia para el sello editorial de
+                        la Universidad Nacional de Luján.
+                    </p>
+                    <p class="text-right text-gray-800 leading-relaxed mt-8">
+                        <strong>Pablo Lulic,</strong>
+                        <br>
+                        <span style="font-weight: regular;">Director de EdUNLu</span>
+                    </p>
+                </div>
+            </div>
+        </section>
 
         <section id="inicio" class="section">
             <div class="content-wrapper">
@@ -812,7 +989,7 @@
                     </div>
                 </div>
                 <div class="text-left">
-                    <p><strong>Investigación y Divulgación Científica</strong></p><p>Presentamos investigaciones de vanguardia y divulgación en campos clave como la biología, la física y la química. Estas publicaciones son el fruto de la intensa actividad de investigación, los debates y el intercambio académico en nuestra comunidad. Representan el principal vehículo para difundir y consolidar el aporte científico de la universidad a la sociedad.</p>
+                    <p><strong>Investigación y Divulgación Científica</strong></p><p>Presentamos investigaciones en campos clave como la biología, la física y la química. Estas publicaciones son el fruto de la intensa actividad de investigación, los debates y el intercambio académico en nuestra comunidad. Representan el principal vehículo para difundir y consolidar el aporte científico de la universidad a la sociedad.</p>
                 </div>
             </div>
         </section>
@@ -851,27 +1028,27 @@
             <div class="timeline">
                 <div class="timeline-container left-timeline">
                     <div class="timeline-content">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">2014: Creación</h3>
-                        <p class="text-gray-600">Se aprueba el Reglamento de Funcionamiento de la Editorial EdUNLu.</p>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">2002 – Registro</h3>
+                        <p class="text-gray-600">Se tramita el sello editorial de la Universidad Nacional de Luján ante la Dirección Nacional del Derecho de Autor, mediante el <strong>Expediente N° 213320</strong> (fecha: 24 de septiembre).</p>
                     </div>
                 </div>
                 <div class="timeline-container right-timeline">
                     <div class="timeline-content">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">2015: Primera Colección</h3>
-                        <p class="text-gray-600">Lanzamiento de la "Colección Aulas Universitarias", un pilar fundamental para la enseñanza.</p>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">2010 – Proyección</h3>
+                        <p class="text-gray-600">Se realizan deliberaciones institucionales que proyectan la creación formal de la editorial.</p>
                     </div>
                     
                 </div>
                 <div class="timeline-container left-timeline">
                     <div class="timeline-content">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">2018: Expansión Digital</h3>
-                        <p class="text-gray-600">Creamos nuestro sitio web y ampliamos nuestra presencia en redes sociales para facilitar el acceso a nuestras publicaciones y fortalecer el vínculo con la comunidad.</p>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">2011 – Creación y consejo</h3>
+                        <p class="text-gray-600">Mediante la <span style="font-weight: bold;">Resolución HCS 233/11,</span> se crea oficialmente EdUNLu como instrumento de la política de ediciones de la UNLu, en el ámbito de la Secretaría del Rectorado.<br>También se crea el <strong>Consejo Editorial Universitario (CEU),</strong> órgano de acompañamiento institucional.</p>
                     </div>
                 </div>
                 <div class="timeline-container right-timeline">
                     <div class="timeline-content">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">2020: Reconocimiento</h3>
-                        <p class="text-gray-600">La editorial recibe un premio nacional por su contribución a la cultura y la investigación.</p>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">2014 – Reglamento</h3>
+                        <p class="text-gray-600">Se aprueba el Reglamento de Funcionamiento de la Editorial EdUNLu, consolidando su marco operativo.</p>
                     </div>
                 </div>
                 <div class="timeline-container left-timeline">
@@ -888,7 +1065,7 @@
     <section id="mission-statement" class="py-16 bg-[#0da353] text-white text-center">
         <div class="container mx-auto px-4">
             <p class="text-2xl leading-relaxed">
-                Seguimos trabajando con compromiso para contribuir al desarrollo del conocimiento, la educación pública y la construcción colectiva de una sociedad más justa y reflexiva, a través de nuestras publicaciones.
+                Trabajamos con compromiso para contribuir al desarrollo del conocimiento, la educación pública y la construcción colectiva de una sociedad más justa y reflexiva, a través de nuestras publicaciones.
             </p>
         </div>
     </section>
@@ -896,7 +1073,7 @@
     <!-- Sección de Llamada a la Acción -->
     <section id="cta-section" class="py-12 bg-gray-200 text-center">
         <h2 class="text-3xl font-bold text-gray-900 mb-6">¿Interesado en nuestro catálogo?</h2>
-        <a href="https://edunlu-editorial.github.io/libros-edunlu/publicaciones/EdUNLu.html" target="_blank" class="inline-block bg-green-600 text-white text-xl font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-green-700 transition duration-300">
+        <a href="https://edunlu-editorial.github.io/libros-edunlu/publicaciones/EdUNLu.html" target="_blank" class="inline-block bg-green-600 text-white text-xl font-semibold py-3 px-8 shadow-lg hover:bg-green-700 transition duration-300">
             Ver catálogo completo
         </a>
     </section>
@@ -907,7 +1084,7 @@
             <!-- Título "¡Sumate y seguinos en nuestras redes!" eliminado -->
             <!-- Enlaces de redes sociales eliminados -->
             <p class="text-gray-400 text-sm mt-8">
-                &copy; 2025 - EdUNLu
+                2025 - EdUNLu
             </p>
         </div>
     </footer>
@@ -1134,7 +1311,7 @@
             }
 
             // JavaScript para el cambio de color de fondo y la imagen flotante
-            const sections = document.querySelectorAll('main .section, #timeline-section, #mission-statement, #video-section, #cta-section, #footer-section'); 
+            const sections = document.querySelectorAll('main .section, #timeline-section, #mission-statement, #video-section, #cta-section, #footer-section, #director-letter-section'); 
             const floatingImage = document.getElementById('floating-image');
             const body = document.body;
             const videoSection = document.getElementById('video-section');
@@ -1149,6 +1326,7 @@
                 'timeline-section': '#FFFFFF',
                 'mission-statement': '#0da353',
                 'video-section': '#333333',
+                'director-letter-section': '#0da353',
                 'cta-section': '#e2e8f0',
                 'footer-section': '#1a202c'
             };
@@ -1173,15 +1351,13 @@
                         }
 
                         // Lógica de reproducción/pausa del video
-                        if (sectionId === 'video-section' && player && isPlayerReady) { // Añadida la verificación isPlayerReady
-                            // Intenta reproducir el video cuando la sección es visible
-                            // La reproducción automática puede fallar si el navegador la bloquea (especialmente sin interacción previa del usuario)
+                        if (sectionId === 'video-section' && player && isPlayerReady) {
                             player.playVideo();
-                            player.mute(); // Asegúrate de que esté silenciado para el autoplay si está permitido
+                            player.mute();
                         }
                     } else {
                         // Pausa el video cuando la sección no es visible
-                        if (entry.target.id === 'video-section' && player && isPlayerReady) { // Añadida la verificación isPlayerReady
+                        if (entry.target.id === 'video-section' && player && isPlayerReady) {
                             player.pauseVideo();
                         }
                     }
@@ -1202,7 +1378,7 @@
 
             // Inicialmente, oculta la imagen si la sección de inicio o cualquier sección donde no deba verse
             // es la primera visible.
-            const initialHiddenSections = ['inicio', 'nosotros', 'video-section', 'our-history-images', 'timeline-section', 'mission-statement', 'cta-section', 'footer-section'];
+            const initialHiddenSections = ['inicio', 'nosotros', 'video-section', 'our-history-images', 'timeline-section', 'mission-statement', 'cta-section', 'footer-section', 'director-letter-section'];
 
             const initialCheckObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -1356,12 +1532,24 @@
                 "https://placehold.co/400x300/0E3E21/000000?text=Historia+10"
             ];
 
-            // Llama a la función para cada carrusel con las URLs de imagen especificadas
+ // Llama a la función para cada carrusel con las URLs de imagen especificadas
             setupCarousel('aulasCarouselTrack', 'carousel-item-collection', ["https://www.edunlu.unlu.edu.ar/sites/www.edunlu.unlu.edu.ar/files/site/a-1.png", "https://www.edunlu.unlu.edu.ar/sites/www.edunlu.unlu.edu.ar/files/site/a-2.png", "https://www.edunlu.unlu.edu.ar/sites/www.edunlu.unlu.edu.ar/files/site/a-3.png", "https://www.edunlu.unlu.edu.ar/sites/www.edunlu.unlu.edu.ar/files/site/a-4.png"], 10, 20);
             setupCarousel('cienciasCarouselTrack', 'carousel-item-collection', ["https://www.edunlu.unlu.edu.ar/sites/www.edunlu.unlu.edu.ar/files/site/a-1.png", "https://www.edunlu.unlu.edu.ar/sites/www.edunlu.unlu.edu.ar/files/site/a-2.png", "https://www.edunlu.unlu.edu.ar/sites/www.edunlu.unlu.edu.ar/files/site/a-3.png", "https://www.edunlu.unlu.edu.ar/sites/www.edunlu.unlu.edu.ar/files/site/a-4.png"], 10, 20);
             setupCarousel('sociedadCarouselTrack', 'carousel-item-collection', ["https://www.edunlu.unlu.edu.ar/sites/www.edunlu.unlu.edu.ar/files/site/a-1.png", "https://www.edunlu.unlu.edu.ar/sites/www.edunlu.unlu.edu.ar/files/site/a-2.png", "https://www.edunlu.unlu.edu.ar/sites/www.edunlu.unlu.edu.ar/files/site/a-3.png", "https://www.edunlu.unlu.edu.ar/sites/www.edunlu.unlu.edu.ar/files/site/a-4.png"], 10, 20);
             setupCarousel('historyCarouselTrack', 'carousel-item-history', historyImageUrls, historyImageUrls.length, 30); // Mayor duración para la historia
         });
+
+        // Lógica para la carta del director desplegable por click
+        const directorLetterTrigger = document.getElementById('directorLetterTrigger');
+        const collapsibleLetterContent = document.getElementById('collapsibleLetterContent');
+        const arrowIcon = directorLetterTrigger.querySelector('.arrow-icon');
+
+        if (directorLetterTrigger && collapsibleLetterContent && arrowIcon) {
+            directorLetterTrigger.addEventListener('click', () => {
+                collapsibleLetterContent.classList.toggle('is-open');
+                arrowIcon.classList.toggle('rotated');
+            });
+        }
     </script>
 </body>
 </html>
