@@ -246,9 +246,11 @@
             position: relative;
             border-radius: 0px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease; /* Transición suave timeline */
         }
         .timeline-content:hover {
             box-shadow: 0 1px 9px rgba(70, 201, 120, 0.986);
+             transform: translate(-10px, -10px); /* Desplaza el elemento 10px a la derecha y 10px abajo */
         }
 
         /* Media queries para la responsividad de la línea de tiempo */
@@ -525,7 +527,12 @@
 
         /* Estilos de la sección de video */
         #video-section {
-            background-color: #333; /* Fondo oscuro para la sección de video */
+            background-image: 
+            url('/activos/fondo-video.png'), /* Ícono o imagen */
+            linear-gradient(161.15deg, #DAEAD9 12.73%, #C4E0C6 72.95%); /* Tu degradado */
+            background-repeat: no-repeat; /* Evita que el icono se repita */
+            background-position: center calc(100% - 40px), center; /* Posición del icono y luego del degradado */
+            background-size: 40% auto, cover; /* Tamaño del icono y luego del degradado */
             padding: 0; /* Se eliminó el padding vertical para permitir la altura completa */
             display: flex;
             justify-content: center;
@@ -533,6 +540,7 @@
             box-sizing: border-box;
             overflow: hidden; /* Asegura que no haya desbordamiento */
             width: 100%; /* Asegura que la sección ocupe todo el ancho */
+            height: 100vh; /* Asegura que la sección ocupe todo el alto */
         }
 
         .video-responsive {
@@ -746,7 +754,7 @@
 
         /* Estado desplegado del contenido de la carta (activado por clase JS) */
         .collapsible-letter-content.is-open {
-            max-height: 1400px; /* Un valor lo suficientemente grande para contener todo el contenido */
+            max-height: 1700px; /* Un valor lo suficientemente grande para contener todo el contenido */
             opacity: 1; /* Hace el contenido visible */
             padding: 20px 30px; /* Restaura el padding completo al abrir */
         }
@@ -819,6 +827,7 @@
     <div class="mobile-nav-container" id="mobile-nav-container">
         <ul id="mobile-nav-links">
             <li><a href="#video-section">10 AÑOS</a></li>
+            <li><a href="#director-letter-section">Carta</a></li>
             <li><a href="#inicio">Colecciones</a></li>
             <li><a href="#timeline-section">Historia</a></li>
             <li><a href="#cta-section">Catálogo</a></li>
