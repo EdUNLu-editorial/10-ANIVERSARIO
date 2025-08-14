@@ -1485,7 +1485,7 @@
             const counterObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting && !hasAnimated) {
-                        animateCounter(counterElement, 100, ' +', ' OBRAS PUBLICADAS');
+                        animateCounter(counterElement, 100, ' +', ' OBRAS EDITADAS');
                         hasAnimated = true; // Establece la bandera a true después de que la animación comienza
                         counterObserver.unobserve(entry.target); // Deja de observar después de la animación
                     }
