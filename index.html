@@ -919,8 +919,8 @@
         <!-- Nueva Sección: Carta del Director -->
         <section id="director-letter-section" class="flex-col text-center py-16 bg-section-carta">
             <div class="director-letter-container">
-                <div class="text-2xl text-yellow-800 mt-0 mb-5 font-semibold">
-                    <p><i class="fa-solid fa-envelope"></i> Diez años desde la publicación del primer libro con sello EdUNLu</p>
+                <div class="text-xl text-yellow-900 mt-0 mb-5 font-semibold">
+                    <p><i class="fa-solid fa-envelope"></i> 10 AÑOS DESDE LA PUBLICACIÓN DEL PRIMER LIBRO CON SELLO EdUNLu</p>
                 </div>
                 <div class="director-letter-title-trigger" id="directorLetterTrigger">
                     <h2 class="text-4xl font-semibold text-white mt-0 mb-0">Celebrar también es reconocer</h2>
@@ -1491,7 +1491,7 @@
             const counterObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting && !hasAnimated) {
-                        animateCounter(counterElement, 100, ' +', ' OBRAS EDITADAS');
+                        animateCounter(counterElement, 100, ' +', ' LIBROS EDITADOS');
                         hasAnimated = true; // Establece la bandera a true después de que la animación comienza
                         counterObserver.unobserve(entry.target); // Deja de observar después de la animación
                     }
