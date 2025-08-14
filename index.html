@@ -10,6 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <!-- API de Iframe de YouTube Player -->
     <script src="https://www.youtube.com/iframe_api"></script>
+    <!-- Carga de Font Awesome para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!--FAVICON-->    
     <link rel="icon" href="https://edunlu-editorial.github.io/10-ANIVERSARIO/activos/f-10-aniversario.svg" type="image/x-icon">
     <style>
@@ -800,6 +802,9 @@
             .bg-section-carta {
             background-image: linear-gradient(-315deg, rgb(175, 146, 17), rgb(231, 194, 73), rgb(177, 143, 44));
         }
+            .bg-section-footer {
+            background-image: linear-gradient(-315deg, rgb(255, 246, 206), rgb(255, 232, 155), rgb(189, 157, 70));
+        }
             @keyframes colorChange {
             0% { background-color: #9b9b9b; } /* azul-500 */
             100% { background-color: #0da353; } /* rojo-500 */
@@ -1154,13 +1159,16 @@
     </section>
 
     <!-- Pie de Página (Footer) -->
-    <footer id="footer-section" class="bg-gray-800 text-white py-12 text-center">
+    <footer id="footer-section" class="bg-section-footer text-white py-12 text-center">
         <div class="container mx-auto px-4">
-            <!-- Título "¡Sumate y seguinos en nuestras redes!" eliminado -->
-            <!-- Enlaces de redes sociales eliminados -->
-            <p class="text-gray-400 text-sm mt-8">
-                2025 - EdUNLu
+            <p class="text-gray-700 text-lg mt-8 mb-4">
+                Podés seguirnos en nuestras redes
             </p>
+                <div class="space-x-8 text-4xl">
+                    <a href="https://www.instagram.com/edunlu_editorial/" target="_blank" class="text-gray-700 hover:text-pink-500 transition duration-300"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@edunlu5875" target="_blank" class="text-gray-700 hover:text-red-800 transition duration-300"><i class="fab fa-youtube"></i></a>
+                    <a href="http://www.facebook.com/EdUNLueditorial/" target="_blank" class="text-gray-700 hover:text-blue-600 transition duration-300"><i class="fab fa-facebook"></i></a>
+                </div>
         </div>
     </footer>
 
