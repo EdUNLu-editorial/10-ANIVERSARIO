@@ -403,7 +403,7 @@
         }
 
         /* Ajustes responsivos para el texto de las colecciones */
-        @media (max-width: 750px) { /* Ajustado a 750px como se solicitó */
+        @media (max-width: 1000px) { /* Ajustado a 750px como se solicitó */
             .counter-display {
                 font-size: 3rem;
                 margin-top: 1rem; /* Espacio desde el texto apilado */
@@ -804,8 +804,8 @@
             margin-bottom: 10px;
             }
             .bg-section-carta {
-            background-image: linear-gradient(-315deg, rgb(175, 146, 17), rgb(231, 194, 73), rgb(177, 143, 44));
-        }
+            background-image: linear-gradient(-315deg, rgb(182, 164, 85), rgb(238, 204, 93), rgb(156, 128, 44));
+            }
             .bg-section-footer {
             background-image: linear-gradient(-315deg, rgb(255, 246, 206), rgb(255, 232, 155), rgb(189, 157, 70));
         }
@@ -919,15 +919,17 @@
         <!-- Nueva Sección: Carta del Director -->
         <section id="director-letter-section" class="flex-col text-center py-16 bg-section-carta">
             <div class="director-letter-container">
-                <div class="text-xl text-yellow-900 mt-0 mb-5 font-semibold">
-                    <p><i class="fa-solid fa-envelope"></i> 10 AÑOS DESDE LA PUBLICACIÓN DEL PRIMER LIBRO CON SELLO EdUNLu</p>
+                <div class="text-2xl text-yellow-900 mt-0 mb-5 font-semibold">
+                    <p class="item-center"><i class="fa-solid fa-pen-nib"></i> Palabras del Director</p>
                 </div>
                 <div class="director-letter-title-trigger" id="directorLetterTrigger">
-                    <h2 class="text-4xl font-semibold text-white mt-0 mb-0">Celebrar también es reconocer</h2>
+                    <h2 class="text-[32px] text-white mt-0 mb-0">10 AÑOS DESDE EL PRIMER LIBRO EDITADO</h2>
                     <span class="arrow-icon">&#9660;</span> <!-- Flecha hacia abajo -->
+                    <!--<i class="fa-solid fa-chevron-down arrow-icon animate-bounce ..."></i> -->
                 </div>
                 <div class="collapsible-letter-content" id="collapsibleLetterContent">
                     <!-- Contenido de la carta -->
+                    <p class="text-center font-bold">Celebrar también es reconocer</p>
                     <hr class="hr">
                     <p class="text-lg text-gray-800 leading-relaxed mb-4">
                         Parece que fue ayer cuando dábamos esos primeros pasos, cargados de ilusión y con la firme
@@ -973,6 +975,7 @@
 
         <section id="inicio" class="section">
             <div class="content-wrapper">
+                <h3 class="text-3xl text-white font-semibold mb-5">Actualmente</h3>
                 <!-- Contador en el centro -->
                 <div class="counter-display" id="counterDisplay">
                     0
