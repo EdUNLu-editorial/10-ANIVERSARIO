@@ -671,7 +671,7 @@
         }
 
         /* Estilos para la nueva sección de la Carta del Director */
-        #director-letter-section {
+        #carta-director {
             background-color: #0da353; /* Color de fondo verde */
             color: #fff; /* Texto blanco */
             padding: 80px 2rem; /* Padding para el contenido */
@@ -779,7 +779,7 @@
 
         /* Ajustes responsivos para la sección de la carta del director */
         @media (max-width: 768px) {
-            #director-letter-section {
+            #carta-director {
                 padding: 60px 1rem;
             }
             .director-photo-container {
@@ -831,10 +831,10 @@
         <nav id="desktop-nav">
             <ul class="flex space-x-4">
                 <li><a href="#video-section" class="text-gray-600 hover:text-green-600 transition duration-300">10 AÑOS</a></li>
-                <li><a href="#director-letter-section" class="text-gray-600 hover:text-green-600 transition duration-300">Carta</a></li>
+                <li><a href="#carta-director" class="text-gray-600 hover:text-green-600 transition duration-300">Carta</a></li>
                 <li><a href="#inicio" class="text-gray-600 hover:text-green-600 transition duration-300">Colecciones</a></li>
                 <li><a href="#timeline-section" class="text-gray-600 hover:text-green-600 transition duration-300">Historia</a></li>
-                <li><a href="#cta-section" class="text-gray-600 hover:text-green-600 transition duration-300">Catálogo</a></li>
+                <li><a href="#catalog-section" class="text-gray-600 hover:text-green-600 transition duration-300">Catálogo</a></li>
             </ul>
         </nav>
         <!-- Botón de Menú de Hamburguesa -->
@@ -847,10 +847,10 @@
     <div class="mobile-nav-container" id="mobile-nav-container">
         <ul id="mobile-nav-links">
             <li><a href="#video-section">10 AÑOS</a></li>
-            <li><a href="#director-letter-section">Carta</a></li>
+            <li><a href="#carta-director">Carta</a></li>
             <li><a href="#inicio">Colecciones</a></li>
             <li><a href="#timeline-section">Historia</a></li>
-            <li><a href="#cta-section">Catálogo</a></li>
+            <li><a href="#catalog-section">Catálogo</a></li>
         </ul>
     </div>
 
@@ -918,7 +918,7 @@
         </section>
 
         <!-- Nueva Sección: Carta del Director -->
-        <section id="director-letter-section" class="flex-col text-center py-16 bg-section-carta">
+        <section id="carta-director" class="flex-col text-center py-16 bg-section-carta">
             <div class="director-letter-container">
                 <div class="text-xl text-slate-900 mt-0 mb-5 font-semibold">
                     <p class="item-center"><!--<i class="fa-solid fa-pen-nib"></i>--> Palabras del Director</p>
@@ -1161,7 +1161,7 @@
     </section>
 
     <!-- Sección de Llamada a la Acción -->
-    <section id="cta-section" class="py-12 bg-gray-200 text-center">
+    <section id="catalog-section" class="py-12 bg-gray-200 text-center">
         <h2 class="text-3xl font-bold text-gray-900 mb-6">¿Interesado en nuestras obras?</h2>
         <a href="https://edunlu-editorial.github.io/libros-edunlu" target="_blank" class="inline-block bg-green-600 text-white text-xl font-semibold py-3 px-8 shadow-lg hover:bg-green-700 transition duration-300">
             Ver catálogo completo
@@ -1404,7 +1404,7 @@
             }
 
             // JavaScript para el cambio de color de fondo y la imagen flotante
-            const sections = document.querySelectorAll('main .section, #timeline-section, #mission-statement, #video-section, #cta-section, #footer-section, #director-letter-section'); 
+            const sections = document.querySelectorAll('main .section, #timeline-section, #mission-statement, #video-section, #catalog-section, #footer-section, #carta-director'); 
             const floatingImage = document.getElementById('floating-image');
             const body = document.body;
             const videoSection = document.getElementById('video-section');
@@ -1419,8 +1419,8 @@
                 'timeline-section': '#FFFFFF',
                 'mission-statement': '#0da353',
                 'video-section': '#333333',
-                'director-letter-section': '#0da353',
-                'cta-section': '#e2e8f0',
+                'carta-director': '#0da353',
+                'catalog-section': '#e2e8f0',
                 'footer-section': '#1a202c'
             };
 
@@ -1471,7 +1471,7 @@
 
             // Inicialmente, oculta la imagen si la sección de inicio o cualquier sección donde no deba verse
             // es la primera visible.
-            const initialHiddenSections = ['inicio', 'nosotros', 'video-section', 'our-history-images', 'timeline-section', 'mission-statement', 'cta-section', 'footer-section', 'director-letter-section'];
+            const initialHiddenSections = ['inicio', 'nosotros', 'video-section', 'our-history-images', 'timeline-section', 'mission-statement', 'catalog-section', 'footer-section', 'carta-director'];
 
             const initialCheckObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
