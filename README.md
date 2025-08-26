@@ -1,9 +1,9 @@
 # 🎉 10° Aniversario EdUNLu
 
-![EdUNLu 10 Años](./img-readme.png)
-
 Sitio web conmemorativo por el **10° aniversario de la Editorial de la Universidad Nacional de Luján (EdUNLu)**.  
 Este proyecto celebra una década de trayectoria editorial, visibilizando la labor, las publicaciones y el compromiso de la Editorial UNLu con el conocimiento, la cultura y la educación pública.
+
+![EdUNLu 10 Años](./img-readme.jpg)
 
 ## ✨ Contenido destacado
 
