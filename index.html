@@ -512,9 +512,9 @@
 
         /* --- COLORES DE FONDO PARA CADA SECCIÓN (NUEVOS ESTILOS) --- */
         #inicio { background-image: linear-gradient(rgb(13, 162, 82), rgb(118, 223, 83)); }
-        #nosotros { background: linear-gradient(90deg, rgba(0, 107, 205, 1) 0%, rgba(0, 107, 205, 1) 50%, rgba(92, 176, 255, 1) 100%); /* Azul para Aulas Universitarias */ }
-        #servicios { background: linear-gradient(90deg,rgba(255, 0, 0, 1) 0%, rgba(255, 0, 0, 1) 50%, rgba(255, 85, 0, 1) 100%); /* Rojo para Ciencias */ }
-        #galeria { background: linear-gradient(90deg,rgba(255, 199, 15, 1) 0%, rgba(245, 188, 0, 1) 50%, rgba(179, 149, 0, 1) 100%); /* Amarillo para Sociedad en Movimiento */ }
+        #aula { background: linear-gradient(90deg, rgba(0, 107, 205, 1) 0%, rgba(0, 107, 205, 1) 50%, rgba(92, 176, 255, 1) 100%); /* Azul para Aulas Universitarias */ }
+        #ciencia { background: linear-gradient(90deg,rgba(255, 0, 0, 1) 0%, rgba(255, 0, 0, 1) 50%, rgba(255, 85, 0, 1) 100%); /* Rojo para Ciencias */ }
+        #sociedad { background: linear-gradient(90deg,rgba(255, 199, 15, 1) 0%, rgba(245, 188, 0, 1) 50%, rgba(179, 149, 0, 1) 100%); /* Amarillo para Sociedad en Movimiento */ }
         #serie-vida { background-image: linear-gradient(rgb(67, 172, 32), rgb(118, 223, 83)); }
         #our-history-images {
             background-color: #FFFFFF; /* Cambiado a blanco para esta sección */
@@ -1003,7 +1003,7 @@
             </div>
         </section>
 
-        <section id="nosotros" class="flex items-center justify-center h-[850px]">
+        <section id="aula" class="flex items-center justify-center h-[850px]">
             <div class="content-wrapper">
                 <div class="text-left">
                     <h1 class="collection-h1">Colección Aulas Universitarias</h1>
@@ -1020,7 +1020,7 @@
             </div>
         </section>
 
-        <section id="servicios" class="flex items-center justify-center h-[850px]">
+        <section id="ciencia" class="flex items-center justify-center h-[850px]">
             <div class="content-wrapper">
                 <div class="text-left">
                     <h1 class="collection-h1">Colección Ciencias</h1>
@@ -1037,7 +1037,7 @@
             </div>
         </section>
 
-        <section id="galeria" class="flex items-center justify-center h-[850px]">
+        <section id="sociedad" class="flex items-center justify-center h-[850px]">
             <div class="content-wrapper">
                 <div class="text-left">
                     <h1 class="collection-h1">Colección Sociedad en Movimiento</h1>
@@ -1440,9 +1440,9 @@
             // Define los colores de fondo para cada sección por su ID
             const sectionColors = {
                 'inicio': '#0da353',
-                'nosotros': '#006bcd',
-                'servicios': '#FF0000',
-                'galeria': '#ffc300',
+                'aula': '#006bcd',
+                'ciencia': '#FF0000',
+                'sociedad': '#ffc300',
                 'our-history-images': '#FFFFFF',
                 'timeline-section': '#FFFFFF',
                 'mission-statement': '#0da353',
@@ -1453,7 +1453,7 @@
             };
 
             // Secciones en las que la imagen flotante DEBE ser visible
-            const sectionsForFloatingImageVisibility = ['servicios', 'galeria'];
+            const sectionsForFloatingImageVisibility = ['ciencia', 'sociedad'];
 
             const observer = new IntersectionObserver((entries) => {
                 let anyVisibleFloatingImageSection = false;
@@ -1499,7 +1499,7 @@
 
             // Inicialmente, oculta la imagen si la sección de inicio o cualquier sección donde no deba verse
             // es la primera visible.
-            const initialHiddenSections = ['inicio', 'nosotros', 'video-section', 'our-history-images', 'timeline-section', 'mission-statement', 'catalog-section', 'footer-section', 'carta-director'];
+            const initialHiddenSections = ['inicio', 'aula', 'video-section', 'our-history-images', 'timeline-section', 'mission-statement', 'catalog-section', 'footer-section', 'carta-director'];
 
             const initialCheckObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
